@@ -58,7 +58,7 @@ pitcher_data <- pitcher_data %>%
 Height <- People %>% select(playerID, height) %>% mutate(height = height/12)
 
 # Using dataset containing multiple ID formats
-id_map <- read.csv("SFBB Player ID Map - PLAYERIDMAP.csv")
+id_map <- read.csv("playerIdMap.csv")
 
 Height <- Height %>% 
   inner_join(id_map, by = c("playerID" = "IDPLAYER")) %>% 
